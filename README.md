@@ -9,6 +9,6 @@ All you need to do is paste straight into the URL inspection bar.
 
 Copy and paste the code below into a bookmark.
 ```
-javascript:(function(){let mrekh=document.createElement("textarea");document.body.appendChild(mrekh),mrekh.value=window.location.href,mrekh.select(),document.execCommand("copy"),document.body.removeChild(mrekh),window.open("https://search.google.com/search-console/performance/search-analytics?resource_id="+window.location.origin+"&page=!"+window.location.href)})();
+javascript:(function(){let pathname2 = encodeURI(window.location.pathname);if (window.location.pathname !== pathname2) {window.open("https://search.google.com/search-console/performance/search-analytics?resource_id="+window.location.origin+"&page=!"+window.location.origin+encodeURI(window.location.pathname).toUpperCase());} else {window.open("https://search.google.com/search-console/performance/search-analytics?resource_id="+window.location.origin+"&page=!"+window.location.origin+window.location.pathname);}})();
 ```
 
